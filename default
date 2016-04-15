@@ -1,0 +1,22 @@
+server {
+    listen       80;
+    server_name  localhost;
+
+    location / 
+    {
+        root   /srv/www/_site;
+        index  index.html index.htm;
+        #    try_files $uri $uri/ $uri.html $uri.html =404;
+        try_files $uri $uri/ $uri/index.html =404;
+        rewrite ^/en(.*) http://krypton.timecamp.com:8888/$1 permanent;
+
+    }
+    if ($request_uri ~ ^(.*)index.html$)
+    {
+        return 301 https://www.timecamp.com/en$1;
+    }
+
+    error_page  404              /404.html;
+
+    error_page   500 502 503 504  /50x.html;
+}
