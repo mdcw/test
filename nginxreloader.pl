@@ -1,4 +1,8 @@
 #!/usr/bin/perl
+
+#TODO: sub na check czy config o nazwie pobranej z argumentu juz istnieje 
+#TODO: sub na to ponizej 
+
 my $runCmd = 'nginx -t';
 my $exit_code=system($runCmd);
 
