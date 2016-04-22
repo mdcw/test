@@ -11,8 +11,8 @@ if($exit_code!=0)
 else
 {
   print "Command $runCmd successful!\n";
-  #print "reloading nginx\n";
-  #my $runCmd2 = 'nginx -s reload';
-  #my $exit_code2 = system($runCmd2);
+  print "reloading nginx\n";
+  my $runCmd2 = 'nginx -s reload';
+  my $exit_code2 = system($runCmd2);
   
 } 
