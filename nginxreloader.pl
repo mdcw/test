@@ -14,5 +14,11 @@ else
   print "reloading nginx\n";
   my $runCmd2 = 'nginx -s reload';
   my $exit_code2 = system($runCmd2);
+
+    if($exit_code==0)
+    {
+    print "Nginx has been successfully reloaded\n";
+    exit($exit_code >> 8);
+    }
   
 } 
